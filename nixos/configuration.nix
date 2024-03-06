@@ -71,17 +71,6 @@
     auto-optimise-store = true;
   };
 
-  # FIXME: Add the rest of your current configuration
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Asia/Kolkata";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-    # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
   networking.hostName = "NixScribe";
 
   # Bootloader.
@@ -152,17 +141,13 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      discord
     ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    git
   #  wget
   ];
 

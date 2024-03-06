@@ -47,23 +47,53 @@
     };
   };
 
-  # TODO: Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = "sankalp";
+    homeDirectory = "/home/sankalp";
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  programs.neovim.enable = true;
 
-  # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Nicely reload system units when changing configs
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    autocd = true;
+    dirHashes = {
+      dl = "$HOME/Downloads";
+      docs = "$HOME/Documents";
+      code = "$HOME/Documents/code";
+      dots = "$HOME/Documents/code/dotfiles";
+      pics = "$HOME/Pictures";
+      vids = "$HOME/Videos";
+      nixpkgs = "$HOME/Documents/code/git/nixpkgs";
+    };
+    dotDir = ".config/zsh";
+    history = {
+      expireDuplicatesFirst = true;
+      path = "${config.xdg.dataHome}/zsh_history";
+    };
+
+    shellAliases =
+      {
+        grep = "grep --color";
+        ip = "ip --color";
+        l = "eza -l";
+        la = "eza -la";
+        md = "mkdir -p";
+        ppc = "powerprofilesctl";
+        pf = "powerprofilesctl launch -p performance";
+
+        us = "systemctl --user";
+        rs = "sudo systemctl";
+      }
+      // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
+    shellGlobalAliases = {eza = "eza --icons --git";};
+  };
+
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 }
