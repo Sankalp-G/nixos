@@ -143,7 +143,7 @@
     description = "Sankalp";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
+      floorp
       webcord-vencord
     ];
   };
@@ -153,7 +153,8 @@
   environment.systemPackages = with pkgs; [
     eza
     nerdfonts
-  #  wget
+    go
+    nodejs_21
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
