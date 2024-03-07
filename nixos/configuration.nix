@@ -144,7 +144,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      discord
+      webcord-vencord
     ];
   };
 
