@@ -19,6 +19,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ./cachix.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -153,8 +154,6 @@
   environment.systemPackages = with pkgs; [
     eza
     nerdfonts
-    go
-    nodejs_21
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
