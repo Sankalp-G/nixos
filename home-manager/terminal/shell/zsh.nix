@@ -1,12 +1,34 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
     autocd = true;
+
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.8.0";
+          sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+        };
+      }
+    ];
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+    };
+
     dirHashes = {
       dl = "$HOME/Downloads";
       docs = "$HOME/Documents";
@@ -16,15 +38,13 @@
       vids = "$HOME/Videos";
       nixpkgs = "$HOME/Documents/code/git/nixpkgs";
     };
+
     dotDir = ".config/zsh";
+
     history = {
       expireDuplicatesFirst = true;
+      size = 40000;
       path = "${config.xdg.dataHome}/zsh_history";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
     };
 
     initExtra = ''
@@ -33,7 +53,6 @@
       bindkey "^[[1;5D" backward-word
 
       # C-Backspace / C-Delete for word deletions
-      bindkey "^[[3;5~" forward-kill-word
       bindkey "^H" backward-kill-word
 
       # Home/End
