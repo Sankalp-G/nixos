@@ -9,6 +9,7 @@
   imports = [
     ./neovim
     ./terminal
+    ./anyrun
   ];
 
   nixpkgs = {
