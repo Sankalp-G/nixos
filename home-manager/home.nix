@@ -10,6 +10,7 @@
     ./neovim
     ./terminal
     ./anyrun
+    ./hyprland
   ];
 
   nixpkgs = {
