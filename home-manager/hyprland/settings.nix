@@ -10,7 +10,7 @@
 
     exec-once = [
       # set cursor for HL itself
-      # "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+      "hyprctl setcursor ${config.home.pointerCursor.name} ${toString config.home.pointerCursor.size}"
       # "systemctl --user start clight"
       # "hyprlock"
     ];

@@ -11,6 +11,7 @@
     ./terminal
     ./anyrun
     ./hyprland
+    ./gtk
   ];
 
   nixpkgs = {
