@@ -39,12 +39,5 @@
     extraOutputsToInstall = ["doc" "devdoc"];
   };
 
-  # disable manuals as nmd fails to build often
-  manual = {
-    html.enable = false;
-    json.enable = false;
-    manpages.enable = false;
-  };
-
   systemd.user.startServices = "sd-switch";
 }

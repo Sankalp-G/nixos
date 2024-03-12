@@ -18,9 +18,9 @@
     general = {
       gaps_in = 5;
       gaps_out = 5;
-      border_size = 1;
-      "col.active_border" = "rgba(88888888)";
-      "col.inactive_border" = "rgba(00000088)";
+      border_size = 2;
+      "col.active_border" = "rgba(33ccff55) rgba(00ff9955) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
 
       allow_tearing = true;
       resize_on_border = true;
@@ -70,7 +70,9 @@
       # focus change on cursor move
       follow_mouse = 1;
       accel_profile = "flat";
-      touchpad.scroll_factor = 0.1;
+      touchpad.scroll_factor = 0.2;
+
+      touchpad.natural_scroll = true;
     };
 
     dwindle = {
