@@ -163,7 +163,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     eza
-    nerdfonts
+  ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "Iosevka" "ShareTechMono" "Hermit" "JetBrainsMono" "FiraCode" "FiraMono" "Hack" "Hasklig" "Ubuntu" "UbuntuMono" ]; })
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.

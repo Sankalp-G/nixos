@@ -6,6 +6,8 @@ in {
   imports = [
     ./shell/starship.nix
     ./shell/zsh.nix
+    ./foot
+    ./wezterm
   ];
 
   # add environment variables

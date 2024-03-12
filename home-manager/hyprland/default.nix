@@ -6,6 +6,10 @@
     ./settings.nix
   ];
 
+  home.packages = with pkgs; [
+    wlr-randr
+  ];
+
   wayland.windowManager.hyprland = {
     # Whether to enable Hyprland wayland compositor
     enable = true;

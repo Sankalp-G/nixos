@@ -47,7 +47,7 @@ in {
 
         # utility
         # terminal
-        "$mod, Return, exec, foot"
+        "$mod, Return, exec, wezterm"
         # logout menu
         # "$mod, Escape, exec, wlogout -p layer-shell"
         # lock screen
