@@ -167,6 +167,7 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "Iosevka" "ShareTechMono" "Hermit" "JetBrainsMono" "FiraCode" "FiraMono" "Hack" "Hasklig" "Ubuntu" "UbuntuMono" ]; })
+    inter
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
