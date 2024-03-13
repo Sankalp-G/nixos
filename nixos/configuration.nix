@@ -163,6 +163,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     eza
+    python312
+    python312Packages.pip
+    python312Packages.virtualenv
+    nodejs_18
+    corepack
   ];
 
   fonts.packages = with pkgs; [

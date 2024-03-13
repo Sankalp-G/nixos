@@ -32,6 +32,7 @@
   programs.neovim.enable = true;
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.zoxide.enable = true;
 
   home = {
     username = "sankalp";
