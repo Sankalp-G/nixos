@@ -168,6 +168,14 @@
     python312Packages.virtualenv
     nodejs_18
     corepack
+    llvmPackages.libcxxClang
+    clang-tools
+  ];
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
   ];
 
   fonts.packages = with pkgs; [

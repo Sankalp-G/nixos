@@ -52,6 +52,15 @@ return {
     servers = {
       -- "pyright"
     },
+
+    config = {
+      clangd = {
+        cmd = { "clangd", "--background-index" },
+        capabilities = {
+          offsetEncoding = "utf-16",
+        },
+      },
+    },
   },
 
   -- Configure require("lazy").setup() options
