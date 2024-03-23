@@ -19,6 +19,9 @@
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
 
+    matugen.url = "github:InioX/matugen";
+    astal.url = "github:Aylur/astal";
+
     ags = {
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";

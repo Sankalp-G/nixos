@@ -1,53 +1,46 @@
+{ inputs, pkgs, lib, config, ... }:
+
 {
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  requiredDeps = with pkgs; [
-    config.wayland.windowManager.hyprland.package
-    bash
-    coreutils
-    dart-sass
-    gawk
-    imagemagick
-    procps
-    ripgrep
-    util-linux
-  ];
-
-  guiDeps = with pkgs; [
-    gnome.gnome-control-center
-    mission-center
-    overskride
-    wlogout
-  ];
-
-  dependencies = requiredDeps ++ guiDeps;
-
-  cfg = config.programs.ags;
-in {
   imports = [
     inputs.ags.homeManagerModules.default
+    inputs.astal.homeManagerModules.default
   ];
 
   home.packages = with pkgs; [
-    bash
-    coreutils
+    bun
     dart-sass
-    gawk
-    imagemagick
-    procps
-    ripgrep
+    fd
+    brightnessctl
+    swww
+    inputs.matugen.packages.${system}.default
+    slurp
+    wf-recorder
+    wl-clipboard
+    wayshot
+    swappy
+    hyprpicker
+    pavucontrol
+    networkmanager
+    gtk3
     util-linux
     gnome.gnome-control-center
     mission-center
-    overskride
-    wlogout
   ];
 
-  programs.ags.enable = true;
+  programs.astal = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libadwaita
+    ];
+  };
+
+  programs.ags = {
+    enable = true;
+    configDir = ./config;
+    # extraPackages = with pkgs; [
+    #   accountsservice
+    # ];
+  };
 
   systemd.user.services.ags = {
     Unit = {
@@ -58,8 +51,8 @@ in {
       ];
     };
     Service = {
-      Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-      ExecStart = "${cfg.package}/bin/ags";
+      # Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
+      ExecStart = "${config.programs.ags.package}/bin/ags";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];

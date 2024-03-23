@@ -6,9 +6,21 @@
     ./settings.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; with gnome; [
     wlr-randr
     jaq
+    adw-gtk3
+    morewaita-icon-theme
+    gnome.adwaita-icon-theme
+    adwaita-icon-theme
+    gnome-text-editor
+    gnome-calendar
+    gnome-boxes
+    gnome-system-monitor
+    gnome-control-center
+    gnome-weather
+    gnome-calculator
+    gnome-clocks
   ];
 
   wayland.windowManager.hyprland = {
