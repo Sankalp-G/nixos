@@ -43,7 +43,7 @@ in {
         "$mod ALT, ,resizeactive,"
 
         # toggle "monocle" (no_gaps_when_only)
-        "$mod, M, exec, hyprctl keyword ${monocle} $(($(hyprctl getoption ${monocle} -j | jaq -r '.int') ^ 1))"
+        "$mod, M, exec, hyprctl keyword dwindle:no_gaps_when_only $(($(hyprctl getoption dwindle:no_gaps_when_only -j | jaq -r '.int') ^ 1))"
 
         # utility
         # terminal

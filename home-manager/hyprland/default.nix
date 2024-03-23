@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     wlr-randr
+    jaq
   ];
 
   wayland.windowManager.hyprland = {
