@@ -156,6 +156,10 @@
     packages = with pkgs; [
       floorp
       webcord-vencord
+      discord
+      htop
+      tealdeer
+      jq
     ];
   };
 
@@ -170,6 +174,9 @@
     corepack
     llvmPackages.libcxxClang
     clang-tools
+    postgresql
+    wget
+    libgcc
   ];
 
   programs.nix-ld.enable = true;
