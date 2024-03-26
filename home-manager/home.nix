@@ -34,6 +34,14 @@
   programs.git.enable = true;
   programs.zoxide.enable = true;
 
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+  };
+  
   home = {
     username = "sankalp";
     homeDirectory = "/home/sankalp";
