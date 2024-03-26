@@ -68,7 +68,7 @@ const options = mkOptions(OPTIONS, {
             start: opt<BarWidget[]>([
                 "launcher",
                 "workspaces",
-                "taskbar",
+                // "taskbar",
                 "expander",
                 "messages",
             ]),

@@ -10,7 +10,7 @@
         color_scheme = 'Everblush',
         default_cursor_style = 'SteadyBar',
         enable_scroll_bar = true,
-        font_size = 14,
+        font_size = 11,
         hide_tab_bar_if_only_one_tab = true,
         scrollback_lines = 10000,
         window_background_opacity = 0.9,

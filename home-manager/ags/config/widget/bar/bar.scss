@@ -117,7 +117,7 @@ $button-radius: $radius;
     }
 
     .quicksettings>box>box {
-        @include spacing($spacing: if($bar-spacing==0, $padding / 2, $bar-spacing));
+        @include spacing($spacing: 10);
     }
 
     .quicksettings:not(.active):not(:active) {
