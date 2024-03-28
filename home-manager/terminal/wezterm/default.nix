@@ -15,9 +15,9 @@
         if string.find(pane:get_title(), 'NVIM') then
           overrides.window_padding = {
             left = 0,
-            right = 0,
+            right = -3,
             top = 0,
-            bottom = 0
+            bottom = '-1cell'
           }
         else
           overrides.window_padding = padding
