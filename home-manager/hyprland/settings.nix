@@ -29,13 +29,13 @@
     decoration = {
       rounding = 16;
       blur = {
-        enabled = true;
+        enabled = false;
         brightness = 1.0;
         contrast = 1.0;
         noise = 0.02;
 
         passes = 1;
-        size = 10;
+        size = 8;
       };
 
       drop_shadow = true;
