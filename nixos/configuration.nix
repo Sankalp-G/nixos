@@ -157,6 +157,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       floorp
+      google-chrome
       webcord-vencord
       discord
       htop
