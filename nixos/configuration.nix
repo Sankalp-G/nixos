@@ -160,9 +160,11 @@
       google-chrome
       webcord-vencord
       discord
+      spotify
       htop
       tealdeer
       jq
+      libqalculate
     ];
   };
 
@@ -173,6 +175,7 @@
     python312
     python312Packages.pip
     python312Packages.virtualenv
+    poetry
     nodejs_18
     corepack
     llvmPackages.libcxxClang
@@ -180,6 +183,8 @@
     postgresql
     wget
     libgcc
+    unzip
+    p7zip
   ];
 
   programs.nix-ld.enable = true;
