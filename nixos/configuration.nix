@@ -165,6 +165,7 @@
       tealdeer
       jq
       libqalculate
+      dbeaver
     ];
   };
 
@@ -172,6 +173,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     eza
+    ruby
+    go
     python312
     python312Packages.pip
     python312Packages.virtualenv
