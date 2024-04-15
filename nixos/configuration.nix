@@ -160,6 +160,7 @@
       google-chrome
       webcord-vencord
       discord
+      telegram-desktop
       spotify
       htop
       tealdeer
