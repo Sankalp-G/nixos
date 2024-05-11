@@ -167,12 +167,17 @@
       jq
       libqalculate
       dbeaver
+      easyeffects
+      zathura
+      distrobox
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    grimblast
+    yazi
     eza
     ruby
     go
