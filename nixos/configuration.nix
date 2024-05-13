@@ -150,11 +150,15 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  virtualisation.docker.enable = true;
+
+  environment.localBinInPath = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sankalp = {
     isNormalUser = true;
     description = "Sankalp";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       floorp
       google-chrome
