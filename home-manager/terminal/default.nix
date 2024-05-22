@@ -8,6 +8,7 @@ in {
     ./shell/zsh.nix
     ./foot
     ./wezterm
+    ./zellij
   ];
 
   # add environment variables
