@@ -7,7 +7,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     autocd = true;
 
@@ -22,22 +22,17 @@
           sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
         };
       }
+      {                                                                                   
+        name = "powerlevel10k";                                                           
+        src = pkgs.zsh-powerlevel10k;                                                     
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";                         
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
     ];
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-    };
-
-    dirHashes = {
-      dl = "$HOME/Downloads";
-      docs = "$HOME/Documents";
-      code = "$HOME/Documents/code";
-      dots = "$HOME/Documents/code/dotfiles";
-      pics = "$HOME/Pictures";
-      vids = "$HOME/Videos";
-      nixpkgs = "$HOME/Documents/code/git/nixpkgs";
-    };
 
     dotDir = ".config/zsh";
 
@@ -48,6 +43,18 @@
     };
 
     initExtra = ''
+      source ~/.config/zsh/.p10k.zsh
+
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+      # Keybindings
+      bindkey -e
+      bindkey '^[OA' history-search-backward
+      bindkey '^[OB' history-search-forward
+      bindkey '^[w' kill-region
+
       # C-right / C-left for word skips
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
@@ -99,4 +106,4 @@
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
     shellGlobalAliases = {eza = "eza --icons --git";};
   };
-}
+} 
