@@ -1,0 +1,3 @@
+[submodule "home-manager/neovim/config"]
+	path = home-manager/neovim/config
+	url = https://github.com/Sankalp-G/neovim
