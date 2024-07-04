@@ -23,6 +23,7 @@
       map ctrl+shift+c copy_to_clipboard
       map kitty_mod+enter launch --cwd=current
       map kitty_mod+t launch --cwd=current --type=tab
+      map kitty_mod+z toggle_layout stack
     '';
   };
 }

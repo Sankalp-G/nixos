@@ -128,6 +128,7 @@
       emacs
       kitty
       pkgs-unstable.neovim
+      neovide
     ];
   };
 
