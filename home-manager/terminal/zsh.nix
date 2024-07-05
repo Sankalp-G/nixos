@@ -49,10 +49,15 @@
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
 
+      autoload -U up-line-or-beginning-search
+      autoload -U down-line-or-beginning-search
+      zle -N up-line-or-beginning-search
+      zle -N down-line-or-beginning-search
+
       # Keybindings
       bindkey -e
-      bindkey '^[OA' history-search-backward
-      bindkey '^[OB' history-search-forward
+      bindkey '^[OA' up-line-or-beginning-search
+      bindkey '^[OB' down-line-or-beginning-search
       bindkey '^[w' kill-region
 
       # C-right / C-left for word skips
@@ -75,7 +80,7 @@
       zstyle ':completion:*' completer _complete _ignored _approximate
       zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-      zstyle ':completion:*' menu select
+      zstyle ':completion:*' menu select search
       zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
       zstyle ':completion:*' verbose true
 
