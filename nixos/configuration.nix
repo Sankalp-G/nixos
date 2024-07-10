@@ -133,6 +133,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    android-tools
     git
     ripgrep
     yazi
@@ -155,6 +156,16 @@
     gcc.cc
     glibc
     fzf
+
+    # gnome extensions
+    gtop
+    (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
+    gnomeExtensions.compiz-windows-effect
+    gnomeExtensions.burn-my-windows
+    gnomeExtensions.just-perfection
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.color-picker
+    gnomeExtensions.tophat
   ];
 
   programs.nix-ld.enable = true;
