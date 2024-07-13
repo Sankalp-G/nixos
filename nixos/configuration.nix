@@ -104,13 +104,16 @@
   environment.localBinInPath = true;
 
   programs.zsh.enable = true;
+  programs.adb.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  virtualisation.docker.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sankalp = {
     isNormalUser = true;
     description = "Sankalp";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
     packages = with pkgs; [
       floorp
       google-chrome
@@ -129,6 +132,7 @@
       kitty
       pkgs-unstable.neovim
       neovide
+      android-studio
     ];
   };
 
@@ -143,6 +147,7 @@
     python312Packages.virtualenv
     nodejs_18
     corepack
+    ruby
     go
     llvmPackages.libcxxClang
     clang-tools
@@ -158,7 +163,6 @@
     fzf
 
     # gnome extensions
-    gtop
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.burn-my-windows
