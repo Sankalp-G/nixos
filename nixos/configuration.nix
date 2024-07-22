@@ -137,6 +137,7 @@
       pkgs-unstable.neovim
       neovide
       android-studio
+      obsidian
     ];
   };
 
