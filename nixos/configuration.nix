@@ -54,6 +54,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8001 8081 ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
