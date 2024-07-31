@@ -92,6 +92,15 @@
     };
   };
 
+  services.power-profiles-daemon.enable = false;
+  services.tlp = {
+    enable = true;
+    settings = {
+      START_CHARGE_THRESH_BAT0=75;
+      STOP_CHARGE_THRESH_BAT0=80;
+    };
+   };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -170,6 +179,7 @@
     # gnome extensions
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
     gnomeExtensions.compiz-windows-effect
+    gnomeExtensions.forge
     gnomeExtensions.burn-my-windows
     gnomeExtensions.just-perfection
     gnomeExtensions.blur-my-shell
