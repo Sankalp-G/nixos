@@ -92,9 +92,9 @@
     };
   };
 
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       START_CHARGE_THRESH_BAT0=75;
       STOP_CHARGE_THRESH_BAT0=80;
