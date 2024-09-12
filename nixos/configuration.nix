@@ -122,6 +122,8 @@
 
   virtualisation.docker.enable = true;
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sankalp = {
     isNormalUser = true;
@@ -175,6 +177,7 @@
     gcc.cc
     glibc
     fzf
+    stripe-cli
 
     # gnome extensions
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
@@ -184,7 +187,7 @@
     gnomeExtensions.just-perfection
     gnomeExtensions.blur-my-shell
     gnomeExtensions.color-picker
-    gnomeExtensions.tophat
+    gnomeExtensions.astra-monitor
   ];
 
   programs.nix-ld.enable = true;
