@@ -15,6 +15,9 @@
     # Nix index database
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    # zen browser
+    zen-browser.url = "github:heywoodlh/flakes/main?dir=zen-browser";
   };
 
   outputs = {
@@ -23,6 +26,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-index-database,
+    zen-browser,
     ...
   } @ inputs: let
     inherit (self) outputs;

@@ -52,6 +52,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  swapDevices = [
+    { device = "/dev/nvme0n1p8"; }
+  ];
+
   # Enable networking
   networking.networkmanager.enable = true;
   networking.firewall = {
@@ -132,6 +136,8 @@
     packages = with pkgs; [
       floorp
       google-chrome
+      inputs.zen-browser.packages.x86_64-linux.zen-browser
+      slack
       vesktop
       telegram-desktop
       spotify
