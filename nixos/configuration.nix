@@ -187,6 +187,7 @@
 
     # gnome extensions
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
+    gnomeExtensions.clipboard-indicator
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.forge
     gnomeExtensions.burn-my-windows
