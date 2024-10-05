@@ -7,7 +7,18 @@
   pkgs,
   pkgs-unstable,
   ...
-}: {
+}: let
+  zed-fhs = pkgs.buildFHSUserEnv {
+    name = "zed";
+    targetPkgs = pkgs:
+      with pkgs; [
+        pkgs-unstable.zed-editor
+      ];
+    runScript = "zed";
+  };
+in {
+  home.packages = [zed-fhs];
+
   # You can import other home-manager modules here
   imports = [
     ./terminal/zsh.nix
