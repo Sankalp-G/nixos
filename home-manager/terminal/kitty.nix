@@ -9,7 +9,7 @@
     shellIntegration.enableZshIntegration = true;
 
     font.name = "JetBrainsMono Nerd Font";
-    theme = "Everforest Dark Hard";
+    theme = "Catppuccin-Frappe";
 
     extraConfig = ''
       window_padding_width 6
