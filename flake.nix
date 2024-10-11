@@ -18,6 +18,9 @@
 
     # zen browser
     zen-browser.url = "github:heywoodlh/flakes/main?dir=zen-browser";
+
+    # stylix
+    stylix.url = "github:danth/stylix/release-24.05";
   };
 
   outputs = {
@@ -27,6 +30,7 @@
     home-manager,
     nix-index-database,
     zen-browser,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -40,7 +44,7 @@
             config.allowUnfree = true;
           };
         };
-        modules = [./nixos/configuration.nix];
+        modules = [stylix.nixosModules.stylix ./nixos/configuration.nix];
       };
     };
 
@@ -55,6 +59,7 @@
           };
         };
         modules = [
+          stylix.homeManagerModules.stylix
           ./home-manager/home.nix
           nix-index-database.hmModules.nix-index
         ];
