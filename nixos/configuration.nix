@@ -156,6 +156,8 @@
       neovide
       android-studio
       obsidian
+      onlyoffice-bin_latest
+      drawio
     ];
   };
 
