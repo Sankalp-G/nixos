@@ -159,6 +159,7 @@
       onlyoffice-bin_latest
       drawio
       pkgs-unstable.zed-editor
+      serverless
     ];
   };
 
