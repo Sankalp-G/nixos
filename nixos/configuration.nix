@@ -160,6 +160,10 @@
       drawio
       pkgs-unstable.zed-editor
       serverless
+      qgis
+      gdal
+      exiftool
+      mpv
     ];
   };
 
