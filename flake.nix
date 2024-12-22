@@ -21,6 +21,9 @@
 
     # stylix
     stylix.url = "github:danth/stylix/release-24.05";
+
+    # ghostty
+    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty.git";
   };
 
   outputs = {
@@ -30,6 +33,7 @@
     home-manager,
     nix-index-database,
     zen-browser,
+    ghostty,
     stylix,
     ...
   } @ inputs: let
@@ -44,7 +48,15 @@
             config.allowUnfree = true;
           };
         };
-        modules = [stylix.nixosModules.stylix ./nixos/configuration.nix];
+        modules = [
+          stylix.nixosModules.stylix
+          ./nixos/configuration.nix
+          {
+            environment.systemPackages = [
+              ghostty.packages.x86_64-linux.default
+            ];
+          }
+        ];
       };
     };
 
