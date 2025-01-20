@@ -164,6 +164,7 @@
       gdal
       exiftool
       mpv
+      tetrio-desktop
     ];
   };
 
