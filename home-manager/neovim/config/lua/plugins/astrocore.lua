@@ -30,14 +30,14 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        scrolloff = 10,
+        scrolloff = 15,
         guifont = "JetBrainsMono Nerd Font",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
-        neovide_transparency = 0.8,
+        neovide_transparency = 0.95,
         neovide_scale_factor = 0.9,
       },
     },
