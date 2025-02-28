@@ -126,6 +126,8 @@
   users.defaultUserShell = pkgs.zsh;
 
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "sankalp" ];
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -165,6 +167,8 @@
       exiftool
       mpv
       tetrio-desktop
+      bambu-studio
+      fastfetch
     ];
   };
 
