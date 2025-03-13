@@ -139,7 +139,6 @@
     packages = with pkgs; [
       floorp
       google-chrome
-      inputs.zen-browser.packages.x86_64-linux.zen-browser
       slack
       vesktop
       telegram-desktop
@@ -169,6 +168,7 @@
       tetrio-desktop
       bambu-studio
       fastfetch
+      (callPackage ../pkgs/zen.nix {})
     ];
   };
 
