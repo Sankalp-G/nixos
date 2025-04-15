@@ -198,6 +198,8 @@
     glibc
     fzf
     stripe-cli
+    openjdk21
+    maven
 
     # gnome extensions
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
