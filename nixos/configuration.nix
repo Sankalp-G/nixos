@@ -161,13 +161,13 @@
       drawio
       pkgs-unstable.zed-editor
       serverless
-      qgis
-      gdal
       exiftool
+      file
       mpv
-      tetrio-desktop
       bambu-studio
       fastfetch
+      pkgs-unstable.blender
+      obs-studio
       (callPackage ../pkgs/zen.nix {})
     ];
   };
