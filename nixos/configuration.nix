@@ -168,6 +168,7 @@
       fastfetch
       pkgs-unstable.blender
       obs-studio
+      pkgs-unstable.code-cursor
       (callPackage ../pkgs/zen.nix {})
     ];
   };
