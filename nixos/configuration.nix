@@ -182,7 +182,7 @@
     python310
     python310Packages.pip
     python310Packages.virtualenv
-    nodejs_18
+    nodejs_22
     corepack
     ruby
     go

@@ -14,4 +14,5 @@ return {
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.recipes.vscode" },
 }
