@@ -169,6 +169,7 @@
       pkgs-unstable.blender
       obs-studio
       pkgs-unstable.code-cursor
+      pkgs-unstable.warp-terminal
       (callPackage ../pkgs/zen.nix {})
     ];
   };
