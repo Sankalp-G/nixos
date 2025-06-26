@@ -171,6 +171,8 @@
       pkgs-unstable.code-cursor
       pkgs-unstable.warp-terminal
       (callPackage ../pkgs/zen.nix {})
+      pkgs-unstable.jetbrains.datagrip
+      pkgs-unstable.koodo-reader
     ];
   };
 
@@ -205,7 +207,6 @@
 
     # gnome extensions
     (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
-    gnomeExtensions.clipboard-indicator
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.forge
     gnomeExtensions.burn-my-windows
@@ -213,6 +214,8 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.color-picker
     gnomeExtensions.astra-monitor
+    gsound
+    gnomeExtensions.pano
   ];
 
   programs.nix-ld.enable = true;
