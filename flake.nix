@@ -3,13 +3,13 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Unstable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nix index database
@@ -20,7 +20,7 @@
     zen-browser.url = "github:heywoodlh/flakes/main?dir=zen-browser";
 
     # stylix
-    stylix.url = "github:danth/stylix/release-24.05";
+    stylix.url = "github:danth/stylix/release-25.05";
 
     # ghostty
     ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty.git";
@@ -71,7 +71,7 @@
           };
         };
         modules = [
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           ./home-manager/home.nix
           nix-index-database.hmModules.nix-index
         ];

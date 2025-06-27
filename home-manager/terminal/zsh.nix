@@ -42,7 +42,7 @@
       path = "${config.xdg.dataHome}/zsh_history";
     };
 
-    initExtra = ''
+    initContent = ''
       source ~/.config/zsh/.p10k.zsh
 
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then

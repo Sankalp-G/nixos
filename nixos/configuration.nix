@@ -54,7 +54,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   swapDevices = [
-    { device = "/dev/nvme0n1p8"; }
+    { device = "/dev/nvme0n1p4"; }
   ];
 
   # Enable networking
@@ -110,7 +110,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -182,9 +182,9 @@
     ripgrep
     yazi
     eza
-    python310
-    python310Packages.pip
-    python310Packages.virtualenv
+    python312
+    python312Packages.pip
+    python312Packages.virtualenv
     nodejs_22
     corepack
     ruby
@@ -206,15 +206,12 @@
     maven
 
     # gnome extensions
-    (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
+    # (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
     gnomeExtensions.compiz-windows-effect
-    gnomeExtensions.forge
     gnomeExtensions.burn-my-windows
-    gnomeExtensions.just-perfection
     gnomeExtensions.blur-my-shell
     gnomeExtensions.color-picker
     gnomeExtensions.astra-monitor
-    gsound
     gnomeExtensions.pano
   ];
 
@@ -225,9 +222,8 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "Iosevka" "ShareTechMono" "Hermit" "JetBrainsMono" "FiraCode" "FiraMono" "Hack" "Hasklig" "Ubuntu" "UbuntuMono" ]; })
     inter
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   networking.hostName = "odyssey";
   services.openssh = {

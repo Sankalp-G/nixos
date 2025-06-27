@@ -8,7 +8,7 @@
   pkgs-unstable,
   ...
 }: let
-  zed-fhs = pkgs.buildFHSUserEnv {
+  zed-fhs = pkgs.buildFHSEnv {
     name = "zed";
     targetPkgs = pkgs:
       with pkgs; [

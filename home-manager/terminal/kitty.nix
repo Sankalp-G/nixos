@@ -9,7 +9,7 @@
     shellIntegration.enableZshIntegration = true;
 
     font.name = "JetBrainsMono Nerd Font";
-    theme = "Catppuccin-Macchiato";
+    themeFile = "Catppuccin-Macchiato";
 
     extraConfig = ''
       window_padding_width 6
