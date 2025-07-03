@@ -1,7 +1,7 @@
 {pkgs, xdg, lib, ...}: {
-  xdg.configFile.nvim = {  
-    source = ./config;  
-    recursive = true;  
+  xdg.configFile.nvim = {
+    source = ./config;
+    recursive = true;
   };
 
   programs.neovim = {
@@ -13,6 +13,6 @@
 
     defaultEditor = true;
 
-    extraPackages = with pkgs; [gcc ripgrep fd go nodejs_22 python3 unzip wl-clipboard fzf cargo rustup];
+    extraPackages = with pkgs; [gcc glibc ripgrep fd go nodejs_22 python3 unzip wl-clipboard fzf cargo rustup];
   };
 }

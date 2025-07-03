@@ -198,6 +198,7 @@
     p7zip
     gnumake
     zlib
+    gcc
     gcc.cc
     glibc
     fzf
