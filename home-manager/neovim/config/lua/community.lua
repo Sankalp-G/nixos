@@ -15,4 +15,5 @@ return {
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.vscode" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }
