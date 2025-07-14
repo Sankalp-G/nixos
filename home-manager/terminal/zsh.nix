@@ -143,6 +143,8 @@
         gstp = "git stash pop";
         gsw = "git switch";
         gswc = "git switch -c";
+
+        kvim="NVIM_APPNAME=\"nvim-kickstart\" nvim";
       }
       // lib.optionalAttrs (config.programs.bat.enable == true) {cat = "bat";};
     shellGlobalAliases = {eza = "eza --icons --git";};

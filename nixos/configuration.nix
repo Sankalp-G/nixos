@@ -168,6 +168,7 @@
       fastfetch
       pkgs-unstable.blender
       obs-studio
+      pkgs-unstable.biome
       pkgs-unstable.code-cursor
       pkgs-unstable.warp-terminal
       (callPackage ../pkgs/zen.nix {})
