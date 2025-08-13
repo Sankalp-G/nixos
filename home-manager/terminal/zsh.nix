@@ -68,8 +68,8 @@
       bindkey "^H" backward-kill-word
 
       # Home/End
-      bindkey "^[[OH" beginning-of-line
-      bindkey "^[[OF" end-of-line
+      bindkey "^[OH" beginning-of-line
+      bindkey "^[OF" end-of-line
 
       # open commands in $EDITOR with C-e
       autoload -z edit-command-line
@@ -88,6 +88,16 @@
       zstyle ':completion:*' use-cache on
       zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
       _comp_options+=(globdots)
+
+      function yy() {
+	      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	      yazi "$@" --cwd-file="$tmp"
+	      if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		      cd -- "$cwd"
+                      zle reset-prompt
+	      fi
+	      rm -f -- "$tmp"
+      }
 
       ${lib.optionalString config.services.gpg-agent.enable ''
         gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)

@@ -69,6 +69,10 @@ return {
         ["<C-d>"] = { "<C-d>zz" },
         ["<C-u>"] = { "<C-u>zz" },
 
+
+        -- Quick save
+        ["<C-s>"] = { "<Esc><cmd>w<CR>", desc = "Quick save" },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
@@ -85,6 +89,10 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      i = {
+        -- insert mode mappings
+        ["<C-s>"] = { "<Esc><cmd>w<CR>", desc = "Quick save" },
       },
     },
   },
