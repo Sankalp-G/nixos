@@ -99,9 +99,14 @@
       }
 
       fo() {
-        if [[ "$1" == "--log" ]]; then
+        if [[ "$1" == "--log" || "$1" == "-l" ]]; then
           shift
-          logfile="fo-$(date +%Y%m%d-%H%M%S).log"
+          if [[ -n "$1" && "$1" != -* ]]; then
+            logfile="$1"
+            shift
+          else
+            logfile="fo-$(date +%Y%m%d-%H%M%S).log"
+          fi
           nohup "$@" >"$logfile" 2>&1 &
           echo "Logging to $logfile"
         else
@@ -109,6 +114,14 @@
         fi
         disown
       }
+
+      # Completion: -l/--log optional filename, then commands
+      _fo() {
+        _arguments \
+          '(-l --log)'{-l,--log}'[log output to a file]:logfile:_files' \
+          '*:command:_command'
+      }
+      compdef _fo fo
 
       ${lib.optionalString config.services.gpg-agent.enable ''
         gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)
