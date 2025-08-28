@@ -98,6 +98,18 @@
 	      rm -f -- "$tmp"
       }
 
+      fo() {
+        if [[ "$1" == "--log" ]]; then
+          shift
+          logfile="fo-$(date +%Y%m%d-%H%M%S).log"
+          nohup "$@" >"$logfile" 2>&1 &
+          echo "Logging to $logfile"
+        else
+          nohup "$@" >/dev/null 2>&1 &
+        fi
+        disown
+      }
+
       ${lib.optionalString config.services.gpg-agent.enable ''
         gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)
         export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/$gnupg_path/S.gpg-agent.ssh"
