@@ -61,7 +61,7 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 8001 8081 ];
+    allowedTCPPorts = [ 8001 8081 5432 ];
   };
 
   # Set your time zone.
@@ -130,6 +130,18 @@
   users.extraGroups.vboxusers.members = [ "sankalp" ];
 
   boot.supportedFilesystems = [ "ntfs" ];
+
+  # enable postgresql
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_16;
+    settings = {
+      listen_addresses = pkgs.lib.mkDefault "*";
+      max_connections = 100;
+      shared_buffers = "256MB";
+      log_min_duration_statement = 1000;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sankalp = {
@@ -206,6 +218,7 @@
     stripe-cli
     openjdk21
     maven
+    cargo
 
     # gnome extensions
     # (pkgs.callPackage ../pkgs/gnomeExtensions/pano.nix { })
